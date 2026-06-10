@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026 | Conexões que Transformam (p5.js)</title>
+    <!-- Bibliotecas p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="no-js">
+
+    <!-- Canvas do p5.js ficará ao fundo -->
+    <div id="p5-canvas-container"></div>
+
+    <nav id="navbar">
+        <a href="#" class="logo">AGRINHO 2026</a>
+        <ul class="nav-menu">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#boas-vindas">Manifesto</a></li>
+            <li><a href="#conexoes">Conexões</a></li>
+            <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+            <li><a href="#inovacao">Inovação</a></li>
+            <li><a href="#participe">Participe</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio">
+        <div class="hero-content">
+            <h1>Campo e Cidade:<br><span style="color: var(--secondary-green);">Um só Coração</span></h1>
+            <p>Unindo a força da terra com a inovação urbana para construir o amanhã.</p>
+            <a href="#boas-vindas" class="btn-main">Conhecer Manifesto</a>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('boas-vindas').scrollIntoView()">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Manifesto / Boas-vindas -->
+        <section id="boas-vindas" class="reveal">
+            <div class="manifesto-card">
+                <span style="color: var(--primary-green); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; display: block;">Nosso Manifesto</span>
+                <blockquote>"Onde termina o asfalto e começa a terra, não existe um muro, mas uma ponte de vida e progresso."</blockquote>
+                <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+                    O projeto Agrinho 2026 nasce da necessidade de reconectar o cidadão com suas raízes. Acreditamos que o entendimento mútuo entre o campo que produz e a cidade que transforma é a chave para um Brasil mais justo, tecnológico e sustentável.
+                </p>
+            </div>
+        </section>
+
+        <!-- Conexões -->
+        <section id="conexoes" class="reveal">
+            <div class="section-title">
+                <h2>Conexões Vitais</h2>
+                <p>Entenda como os dois lados se fortalecem mutuamente em um ciclo contínuo de colaboração.</p>
+            </div>
+            <div class="tabs-wrapper">
+                <div class="tab-nav">
+                    <button class="tab-trigger active" onclick="switchTab(event, 'campo')">
+                        <i class="fas fa-tractor"></i> O Campo Abastece a Cidade
+                    </button>
+                    <button class="tab-trigger cidade-trigger" onclick="switchTab(event, 'cidade')">
+                        <i class="fas fa-city"></i> A Cidade Apoia o Campo
+                    </button>
+                </div>
+
+                <div id="campo" class="tab-pane active">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-apple-whole"></i>
+                            <h3>Segurança Alimentar</h3>
+                            <p>Produção diversificada que garante alimentos frescos e saudáveis em todas as mesas urbanas diariamente.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-industry"></i>
+                            <h3>Matérias-Primas</h3>
+                            <p>Fornecimento essencial de fibras, madeira e biocombustíveis que movem a indústria e a economia das cidades.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <h3>Cuidado com a Terra</h3>
+                            <p>O produtor rural atua como guardião das águas e das florestas que regulam o clima de todo o país.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cidade" class="tab-pane">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-satellite"></i>
+                            <h3>Inovação Tecnológica</h3>
+                            <p>Desenvolvimento de softwares, drones e IA nos centros urbanos para otimizar a produtividade rural.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-microscope"></i>
+                            <h3>Ciência e Pesquisa</h3>
+                            <p>Universidades e laboratórios urbanos criando soluções para pragas, solo e mudanças climáticas.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-cart-shopping"></i>
+                            <h3>Mercado Consumidor</h3>
+                            <p>O poder de compra urbano que valoriza produtos éticos e impulsiona o crescimento do agronegócio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sustentabilidade -->
+        <section id="sustentabilidade" class="reveal">
+            <div class="split-section">
+                <div class="split-visual sustentabilidade">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="split-content">
+                    <span style="color: var(--primary-green); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block;">União Verde</span>
+                    <h2>Sustentabilidade na Prática</h2>
+                    <p>Práticas verdes que unem os dois lados: desde o plantio direto no campo até o consumo consciente e reciclagem na cidade. Juntos pela preservação ambiental.</p>
+                    <ul style="list-style: none; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-green); margin-right: 10px;"></i> Preservação de nascentes e matas ciliares.</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-green); margin-right: 10px;"></i> Gestão inteligente de resíduos urbanos e rurais.</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-green); margin-right: 10px;"></i> Educação para o consumo consciente.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inovação -->
+        <section id="inovacao" class="reveal">
+            <div class="split-section">
+                <div class="split-content">
+                    <span style="color: var(--primary-blue); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; display: block;">Futuro Digital</span>
+                    <h2>Tecnologia e Integração</h2>
+                    <p>O agronegócio encontra as cidades inteligentes. A integração rural-urbana através de dados, conectividade e soluções autônomas.</p>
+                    <a href="#participe" class="btn-main">Ver Projetos de Inovação</a>
+                </div>
+                <div class="split-visual">
+                    <i class="fas fa-robot"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Participe -->
+        <section id="participe" class="reveal">
+            <div class="section-title">
+                <h2>Como Participar</h2>
+                <p>Faça parte desta transformação. Sua ação, seja no campo ou na cidade, faz a diferença.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-calendar-star"></i>
+                    <h3>Eventos e Feiras</h3>
+                    <p>Participe de feiras integradas que mostram o melhor da tecnologia e da produção local.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Voluntariado</h3>
+                    <p>Engaje-se em projetos educativos que levam o conhecimento do agro para as escolas urbanas.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Apoie a Causa</h3>
+                    <p>Seja um embaixador da integração campo-cidade compartilhando conhecimento e consumindo local.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <span class="footer-logo">AGRINHO 2026</span>
+        <p style="max-width: 600px; margin: 0 auto 30px; opacity: 0.8;">
+            Um projeto dedicado a educar as novas gerações sobre a importância vital da integração entre o campo e a cidade.
+        </p>
+        <div class="footer-partnership">
+            Parceria com a Manus AI
+        </div>
+        <div style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
+            Desenvolvido por: Samuel Donato da Silva
+        </div>
+        <div style="margin-top: 5px; font-size: 0.85rem; opacity: 0.7;">
+            Colégio Estadual José Luiz Gori - Mandaguari-PR
+        </div>
+        <div class="copyright">
+            &copy; 2026 Agrinho Brasil. Todos os direitos reservados. Educando para transformar.
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- p5.js Sketch -->
+    <script src="sketch.js"></script>
+</body>
+</html>
